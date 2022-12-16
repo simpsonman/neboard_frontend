@@ -1,18 +1,21 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <!-- <HelloWorld msg="Welcome to Your Vue.js App!!"/> -->
-  <write/>
+  <!-- <write/> -->
+  <Scenario/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import write from './components/write.vue'
+import Scenario from './components/Scenario.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    write
+    write, 
+    Scenario
   }
 }
 </script>
