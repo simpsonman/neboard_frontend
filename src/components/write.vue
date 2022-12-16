@@ -3,9 +3,7 @@
         <form @submit.prevent="submitForm">
             <label for="title">제목</label>
             <input type="text" id="title" v-model="title">
-            <label for="content">내용</label>
-            <!-- <input type="text" id="content" v-model="content"> -->
-			<textarea rows="8" cols="" name="content" id="content" class="input summernote"></textarea>
+			<textarea rows="8" cols="" name="content" id="content" class="summernote"></textarea>
             <label for="pw">비밀번호</label>
             <input type="password" id="pw" v-model="pw">
             <input type="submit" value="글쓰기">
@@ -28,11 +26,16 @@ export default {
 	methods: {
 		submitForm() {
 			var json = {};
+			var summernoteContent = $('.summernote').summernote('code'); 
+
 			json.title=this.title;
-			json.content=this.content;
+			json.content=summernoteContent;
 			json.pw=this.pw;
 			console.log(json);
 		},
 	},
+	  mounted() {
+		$('.summernote').summernote();
+	}
 };
 </script>
